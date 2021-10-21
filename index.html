@@ -79,16 +79,17 @@
             $('#selectType').on('change', function(){
                 if($(this).val() === 'image'){
                     imagelists.on("child_added", showDataImage, showErr)
-                    $('#icon-lists').hide()
-                    $('#image-lists').show()
-                } else {
+                    $('#icon-lists').empty()
+                } else if($(this).val() === 'icon'){
                     iconlists.on("child_added", showDataIcon, showErr)
-                    $('#image-lists').hide()
-                    $('#icon-lists').show()
+                    $('#image-lists').empty()
+                } else {
+                    imagelists.on("child_added", showDataImage, showErr)
+                    iconlists.on("child_added", showDataIcon, showErr)
                 }
             })
         })
-        
+
         function showDataImage(item){
             let icon = item.val();
             // let icon = snap.val();
