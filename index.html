@@ -102,7 +102,7 @@
             $li.append($card)
 
             for (const [key, value] of Object.entries({
-                class: 'flex bg-white w-full my-4 p-4 gap-6 items-center shadow-md hover:shodow-lg border-2 border-transparent hover:border-indigo-600 transform scale-90 rounded-2xl',
+                class: 'bg-white w-full my-4 p-4 gap-6 items-center shadow-md hover:shodow-lg border-2 border-transparent hover:border-indigo-600 transform scale-90 rounded-2xl',
             })) {
                 $card.setAttribute(key, value);
             }
@@ -110,25 +110,25 @@
             let $icon = document.createElement('div'); 
             $card.append($icon);
             for (const [key, value] of Object.entries({
-                class: 'md:w-3/5 w-1/5 bg-green-50 border-2 border-green-100 rounded p-1',
+                class: 'w-full bg-green-50 border-2 border-green-100 rounded p-1',
             })) {
                 $icon.setAttribute(key, value);
             }
             //
             let $name = document.createElement('div'); 
             $card.append($name);
-            $name.innerHTML = '<p class="font-semibold">' + name + '</p> <p>' + cat +'</p>';
+            $name.innerHTML = '<div><p class="font-semibold">' + name + '</p> <p>' + cat +'</p></div>';
             for (const [key, value] of Object.entries({
-                class: 'md:w-2/5 w-3/5',
+                class: 'flex items-center justify-between mt-4',
             })) {
                 $name.setAttribute(key, value);
             }
 
             let $btn = document.createElement('div');
-            $card.append($btn);
+            $name.append($btn);
             $btn.innerHTML = '<a href="'+ url +'" class="content-center" target="_blank"><p class="text-center">Image Link</p></a>';
             for (const [key, value] of Object.entries({
-                class: 'lg:w-2/12 w-1/5 bg-green-100 hover:bg-green-300 rounded p-2',
+                class: 'bg-green-100 hover:bg-green-300 rounded p-2',
             })) {
                 $btn.setAttribute(key, value);
             }
